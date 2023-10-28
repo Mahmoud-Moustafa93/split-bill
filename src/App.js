@@ -24,10 +24,10 @@ export default function App() {
     <div className="app">
       <div className="sidebar">
         <FriendsList />
-        <AddFriend />
+        <FormAddFriend />
         <button className="button">Add friend</button>
       </div>
-      <SplitBill />
+      <FormSplitBill />
     </div>
   );
 }
@@ -66,7 +66,7 @@ function Friend({ friend }) {
   );
 }
 
-function AddFriend() {
+function FormAddFriend() {
   return (
     <form className="form-add-friend">
       <label>👫 Friend name</label>
@@ -80,7 +80,7 @@ function AddFriend() {
   );
 }
 
-function SplitBill() {
+function FormSplitBill() {
   return (
     <form className="form-split-bill">
       <h2>Split a bill with Anthony</h2>
