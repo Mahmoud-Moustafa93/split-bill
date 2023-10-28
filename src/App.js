@@ -24,6 +24,7 @@ export default function App() {
     <div className="app">
       <div className="sidebar">
         <FriendsList />
+        <AddFriend />
         <button className="button">Add friend</button>
       </div>
     </div>
@@ -64,10 +65,22 @@ function Friend({ friend }) {
   );
 }
 
+function AddFriend() {
+  return (
+    <form className="form-add-friend">
+      <label>👫 Friend name</label>
+      <input type="text" />
+      <label>🌄 Image URL</label>
+      <input type="text" />
+      <button className="button">Add</button>
+    </form>
+  );
+}
+
 /* Component tree 
 ------------------
                 App
-      /         |             \
+      /          |             \
 FriendsList   AddFriend     SplitBill
       |          
     Friend       
