@@ -60,32 +60,49 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <div className="sidebar">
-        <FriendsList
-          friends={friends}
-          onSelection={handleSelection}
-          selectedFriend={selectedFriend}
-        />
+    <>
+      <div className="app">
+        <div className="sidebar">
+          <FriendsList
+            friends={friends}
+            onSelection={handleSelection}
+            selectedFriend={selectedFriend}
+          />
 
-        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
+          {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
 
-        <Button
-          onClick={() => {
-            setShowAddFriend(!showAddFriend);
-          }}
-        >
-          {showAddFriend ? "Close" : "Add friend"}
-        </Button>
+          <Button
+            onClick={() => {
+              setShowAddFriend(!showAddFriend);
+            }}
+          >
+            {showAddFriend ? "Close" : "Add friend"}
+          </Button>
+        </div>
+
+        {selectedFriend && (
+          <FormSplitBill
+            selectedFriend={selectedFriend}
+            onSplitBill={handleSplitBill}
+          />
+        )}
       </div>
-
-      {selectedFriend && (
-        <FormSplitBill
-          selectedFriend={selectedFriend}
-          onSplitBill={handleSplitBill}
-        />
-      )}
-    </div>
+      <footer className="footer">
+        <p className="copy">
+          © Copyright by{" "}
+          <a
+            className="creator"
+            href="https://pph.me/mahmoudmostafa"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Mahmoud Mostafa
+          </a>
+          <br />
+          💥Monday, October 30 2023💥
+        </p>
+      </footer>
+    </>
   );
 }
 
